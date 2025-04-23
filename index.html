@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nRev - Design your GTM your way</title>
+<meta name="description" content="The new age of building GTM Tools">
+<meta property="og:title" content="nRev - Your GTM. Your Way. Your Price.">
+<meta property="og:description" content="nRev helps you build your GTM Workflows, Agents and Apps seamlessly without any engineering efforts">
+<meta property="og:url" content="https://www.nrev.ai">
+<meta property="og:site_name" content="nRev">
+<meta property="og:image" content="https://www.nrev.ai/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="nRev - Your GTM. Your Way. Your Price.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="nRev - Your GTM. Your Way. Your Price.">
+<meta name="twitter:description" content="nRev helps you build your GTM Workflows, Agents and Apps seamlessly without any engineering efforts">
+<meta name="twitter:image" content="https://www.nrev.ai/og-image.jpg">
+
+<!-- Google Fonts - Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Base styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Layout */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .alpha-tag {
+    background-color: #9333ea;
+    color: white;
+    font-size: 0.6rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.2rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+  }
+
+  .btn-outline {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-primary {
+    background-color: #9333ea;
+    color: white;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: #7e22ce;
+  }
+
+  /* Hero Section */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .line1 {
+    color: #9333ea; /* Purple */
+  }
+
+  .hero-title .line2 {
+    color: #3b82f6; /* Blue */
+  }
+
+  .hero-title .line3 {
+    color: #14b8a6; /* Teal */
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 36rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Form */
+  .waitlist-form {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 32rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .input {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+  }
+
+  .input:focus {
+    outline: none;
+    border-color: #9333ea;
+  }
+
+  .input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .form-note {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Form Status */
+  .form-status {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .form-status.visible {
+    opacity: 1;
+  }
+
+  .form-status.success {
+    color: #10b981;
+  }
+
+  .form-status.error {
+    color: #ef4444;
+  }
+
+  /* Cards Section */
+  .cards-container {
+    margin: 4rem auto;
+    max-width: 1100px;
+    padding: 1.5rem;
+    background: linear-gradient(to bottom right, rgba(30, 30, 40, 0.6), rgba(15, 15, 25, 0.6));
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .card {
+    background-color: rgba(41, 37, 56, 0.8);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .card.clickable {
+    cursor: pointer;
+  }
+
+  .card.clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(147, 51, 234, 0.2);
+    border-color: rgba(147, 51, 234, 0.3);
+  }
+
+  .card-title {
+    font-size: 1rem;
+    padding-top: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-title span {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+  }
+
+  .card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .lightning {
+    color: #eab308;
+  }
+
+  .coming-soon-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(147, 51, 234, 0.3);
+    color: #d8b4fe;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Workflow Canvas */
+  .workflow-canvas {
+    width: 100%;
+    height: 600px; /* Increased height from 450px to 600px */
+    background-color: #0a0a0f;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .workflow-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: rgba(30, 30, 40, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    justify-content: space-between;
+    z-index: 10;
+  }
+
+  .workflow-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .workflow-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .workflow-action {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.1s;
+  }
+
+  .workflow-action:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Workflow Nodes */
+  .workflow-node {
+    position: absolute;
+    background: linear-gradient(135deg, #2d2b3a 0%, #1e1c2a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: move;
+    opacity: 1; /* Changed from 0 to 1 to make all nodes visible by default */
+    transform: translateY(0); /* Changed from translateY(10px) to make all nodes visible by default */
+    transition: box-shadow 0.2s ease;
+  }
+
+  .workflow-node:hover {
+    box-shadow: 0 8px 25px rgba(147, 51, 234, 0.2);
+    border-color: rgba(147, 51, 234, 0.3);
+  }
+
+  .node-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .node-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
+    border-radius: 6px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  .node-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+    flex: 1;
+  }
+
+  .node-handle {
+    width: 16px;
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: move;
+    flex-shrink: 0;
+  }
+
+  .node-content {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+  }
+
+  .node-steps {
+    margin-top: 10px;
+  }
+
+  .node-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .step-bullet {
+    width: 6px;
+    height: 6px;
+    background-color: #9333ea;
+    border-radius: 50%;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .node-ports {
+    display: flex;
+    justify-content: flex-end; /* Changed from space-between to flex-end */
+    margin-top: 15px;
+  }
+
+  .port {
+    width: 12px;
+    height: 12px;
+    background-color: #9333ea;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .port.output {
+    margin-right: -20px;
+  }
+
+  .port::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .port:hover::after {
+    opacity: 1;
+  }
+
+  /* Prompt Box */
+  .prompt-container {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(41, 37, 56, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+  }
+
+  .prompt-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 0.875rem;
+    padding: 8px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .prompt-input:focus {
+    outline: none;
+  }
+
+  .prompt-button {
+    background-color: #9333ea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .prompt-button:hover {
+    background-color: #7e22ce;
+  }
+
+  .typing-animation::after {
+    content: '|';
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* Node Border Animation */
+  @keyframes borderPulse {
+    0% { box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(147, 51, 234, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(147, 51, 234, 0); }
+  }
+
+  .workflow-node.running {
+    animation: borderPulse 1s ease-out infinite;
+    border-color: #9333ea;
+  }
+
+  /* Connection Lines */
+  .connection {
+    position: absolute;
+    height: 2px;
+    background-color: #9333ea;
+    transform-origin: left center;
+    opacity: 1; /* Changed from 0 to 1 to make all connections visible by default */
+    transition: opacity 0.5s ease;
+    z-index: 1;
+  }
+
+  /* Results Display */
+  .results-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 5;
+  }
+
+  .results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .results-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .results-count {
+    background-color: rgba(147, 51, 234, 0.2);
+    color: #d8b4fe;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+
+  .result-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s;
+  }
+
+  .result-item:hover {
+    transform: translateX(3px);
+  }
+
+  .result-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .result-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+    background-color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+  }
+
+  .result-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .result-info {
+    flex: 1;
+  }
+
+  .result-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: white;
+  }
+
+  .result-position {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3px;
+  }
+
+  .result-contact {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .result-tags {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+  }
+
+  .result-tag {
+    background-color: rgba(147, 51, 234, 0.15);
+    color: #d8b4fe;
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  /* Workflow Sidebar */
+  .workflow-sidebar {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 0;
+    width: 50px;
+    background-color: rgba(30, 30, 40, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    z-index: 5;
+  }
+
+  .sidebar-item {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .sidebar-item:hover {
+    background-color: rgba(147, 51, 234, 0.3);
+  }
+
+  .sidebar-item svg {
+    width: 16px;
+    height: 16px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Why nRev Section */
+  .why-nrev {
+    margin: 6rem auto;
+    max-width: 1100px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #9333ea;
+  }
+
+  .section-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .content-block {
+    margin-bottom: 2rem;
+    color:rgba(255, 255, 255, 0.8);
+  }
+
+  .content-block h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #3b82f6;
+  }
+
+  .content-block p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .jobs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .job-item {
+    background-color: rgba(41, 37, 56, 0.8);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .job-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #14b8a6;
+  }
+
+  .job-item p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .benefit-item {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .benefit-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(147, 51, 234, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9333ea;
+    font-size: 1.25rem;
+  }
+
+  .benefit-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #3b82f6;
+  }
+
+  .yes{margin-left: 2rem;}
+
+  .benefit-content p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-title {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .waitlist-form {
+      flex-direction: column;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .results-container {
+      width: 240px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .nav-buttons {
+      gap: 0.5rem;
+    }
+    
+    .btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+    }
+    
+    .workflow-canvas {
+      height: 650px; /* Increased height for mobile */
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+        <img src="logo.svg" width="100px" height="50px">
+      <span class="alpha-tag">Alpha</span>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn btn-outline" onclick="scrollToSection('why-nrev-section')">Why nRev?</button>
+      <button class="btn btn-primary" onclick="scrollToSection('waitlist-form-section')">Join Waitlist</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="waitlist-form-section">
+    <h1 class="hero-title">
+      <div class="line1">Your GTM.</div>
+      <div class="line2">Your Way.</div>
+      <div class="line3">Your Price.</div>
+    </h1>
+    <p class="hero-subtitle">
+        Reimagine your revenue strategy in hours, not weeks.
+    </p>
+    
+    <!-- Waitlist Form -->
+    <form class="waitlist-form" id="waitlist-form">
+      <input type="email" class="input" id="email-input" placeholder="Enter your email" required>
+      <button type="submit" class="btn btn-primary" id="submit-btn">
+        Join Waitlist →
+      </button>
+    </form>
+    <p class="form-note">
+      By invitation only. Limited spots available. We'll never share your email.
+    </p>
+    <div class="form-status" id="form-status"></div>
+  </section>
+
+  <!-- Cards Section -->
+  <div class="cards-container">
+    <div class="cards-grid">
+      <!-- First Card - Clickable -->
+      <div class="card clickable" id="it-ops-card">
+        <h3 class="card-title">Data Enrichment Workflows</h3>
+      </div>
+
+      <!-- Second Card - Coming Soon -->
+      <div class="card">
+        <span class="coming-soon-badge">Coming Soon</span>
+        <h3 class="card-title">Process Automation</h3>
+      </div>
+
+      <!-- Third Card - Coming Soon -->
+      <div class="card">
+        <span class="coming-soon-badge">Coming Soon</span>
+        <h3 class="card-title">Build GTM Apps</h3>
+      </div>
+
+      <!-- Fourth Card - Coming Soon -->
+      <div class="card">
+        <span class="coming-soon-badge">Coming Soon</span>
+        <h3 class="card-title">Create Reports and Dashboards</h3>
+      </div>
+    </div>
+
+    <!-- Workflow Canvas -->
+    <div class="workflow-canvas" id="workflow-canvas">
+      <!-- Workflow Toolbar -->
+      <div class="workflow-toolbar">
+        <div class="workflow-title">Lead Enrichment Workflow</div>
+        <div class="workflow-actions">
+          <button class="workflow-action" title="Save workflow">💾</button>
+          <button class="workflow-action" title="Run workflow">▶️</button>
+          <button class="workflow-action" title="Settings">⚙️</button>
+        </div>
+      </div>
+      
+      <!-- Workflow Sidebar -->
+      <div class="workflow-sidebar">
+        <div class="sidebar-item" title="Add trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        </div>
+        <div class="sidebar-item" title="Add action">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        </div>
+        <div class="sidebar-item" title="Add condition">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+        </div>
+      </div>
+      
+      <!-- Workflow Nodes -->
+      <div id="node-1" class="workflow-node" style="top: 100px; left: 120px;">
+        <div class="node-header">
+          <div class="node-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="node-title">Data Source</div>
+          <div class="node-handle"></div>
+        </div>
+        <div class="node-content">Fetch companies from Hubspot and prepare for enrichment</div>
+        <div class="node-steps">
+          <div class="node-step"><div class="step-bullet"></div>Trigger - Fetch companies</div>
+          <div class="node-step"><div class="step-bullet"></div>Filter active accounts</div>
+          <div class="node-step"><div class="step-bullet"></div>Prepare data structure</div>
+        </div>
+        <div class="node-ports">
+          <div class="port output"></div>
+        </div>
+      </div>
+      
+      <div id="node-2" class="workflow-node" style="top: 100px; left: 400px;">
+        <div class="node-header">
+          <div class="node-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+          </div>
+          <div class="node-title">Enrichment</div>
+          <div class="node-handle"></div>
+        </div>
+        <div class="node-content">Enrich company data and find relevant people</div>
+        <div class="node-steps">
+          <div class="node-step"><div class="step-bullet"></div>Enrich company from nRev</div>
+          <div class="node-step"><div class="step-bullet"></div>Find people from nRev</div>
+          <div class="node-step"><div class="step-bullet"></div>Semantic search & scoring</div>
+        </div>
+        <div class="node-ports">
+          <div class="port output"></div>
+        </div>
+      </div>
+      
+      <div id="node-3" class="workflow-node" style="top: 100px; left: 680px;">
+        <div class="node-header">
+          <div class="node-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div class="node-title">Social Profiles</div>
+          <div class="node-handle"></div>
+        </div>
+        <div class="node-content">Fetch social profiles and additional information</div>
+        <div class="node-steps">
+          <div class="node-step"><div class="step-bullet"></div>Fetch LinkedIn profiles</div>
+          <div class="node-step"><div class="step-bullet"></div>Fetch Twitter threads</div>
+          <div class="node-step"><div class="step-bullet"></div>Fetch Google information</div>
+        </div>
+        <div class="node-ports">
+          <div class="port output"></div>
+        </div>
+      </div>
+      
+      <!-- Results Container -->
+      <div class="results-container" id="results-container">
+        <div class="results-header">
+          <div class="results-title">People Data</div>
+          <div class="results-count">3 found</div>
+        </div>
+        <div class="result-item">
+          <div class="result-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23333'/%3E%3Cpath d='M20 22C24.4183 22 28 18.4183 28 14C28 9.58172 24.4183 6 20 6C15.5817 6 12 9.58172 12 14C12 18.4183 15.5817 22 20 22Z' fill='%23555'/%3E%3Cpath d='M32 34C32 28.4772 26.6274 24 20 24C13.3726 24 8 28.4772 8 34' stroke='%23555' stroke-width='4'/%3E%3C/svg%3E" alt="Sarah Johnson">
+          </div>
+          <div class="result-info">
+            <div class="result-name">Sarah Johnson</div>
+            <div class="result-position">VP of Marketing at TechCorp</div>
+            <div class="result-contact">sarah.j@example.com</div>
+            <div class="result-tags">
+              <span class="result-tag">Decision Maker</span>
+              <span class="result-tag">95% Match</span>
+            </div>
+          </div>
+        </div>
+        <div class="result-item">
+          <div class="result-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23333'/%3E%3Cpath d='M20 22C24.4183 22 28 18.4183 28 14C28 9.58172 24.4183 6 20 6C15.5817 6 12 9.58172 12 14C12 18.4183 15.5817 22 20 22Z' fill='%23555'/%3E%3Cpath d='M32 34C32 28.4772 26.6274 24 20 24C13.3726 24 8 28.4772 8 34' stroke='%23555' stroke-width='4'/%3E%3C/svg%3E" alt="Michael Chen">
+          </div>
+          <div class="result-info">
+            <div class="result-name">Michael Chen</div>
+            <div class="result-position">CTO at TechCorp</div>
+            <div class="result-contact">m.chen@example.com</div>
+            <div class="result-tags">
+              <span class="result-tag">Technical</span>
+              <span class="result-tag">88% Match</span>
+            </div>
+          </div>
+        </div>
+        <div class="result-item">
+          <div class="result-avatar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23333'/%3E%3Cpath d='M20 22C24.4183 22 28 18.4183 28 14C28 9.58172 24.4183 6 20 6C15.5817 6 12 9.58172 12 14C12 18.4183 15.5817 22 20 22Z' fill='%23555'/%3E%3Cpath d='M32 34C32 28.4772 26.6274 24 20 24C13.3726 24 8 28.4772 8 34' stroke='%23555' stroke-width='4'/%3E%3C/svg%3E" alt="Alex Rodriguez">
+          </div>
+          <div class="result-info">
+            <div class="result-name">Alex Rodriguez</div>
+            <div class="result-position">Director of Sales at TechCorp</div>
+            <div class="result-contact">alex.r@example.com</div>
+            <div class="result-tags">
+              <span class="result-tag">Influencer</span>
+              <span class="result-tag">76% Match</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Prompt Box -->
+      <div class="prompt-container" id="prompt-container">
+        <input type="text" class="prompt-input" id="prompt-input" placeholder="Type your workflow instructions..." readonly>
+        <button class="prompt-button" id="prompt-button">Run</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why nRev Section -->
+  <section class="why-nrev" id="why-nrev-section">
+    <h2 class="section-title">Why nRev?</h2>
+    <div>
+        <div class="content-block"><h3>Every healthy RevOps organization has five jobs to keep the rocket in the air</h3>
+            <div class="yes">
+                <ul>
+                    <li><strong>Plan & Forecast</strong> – Decide where the revenue will come from and who owns which number.</li>
+                    <li><strong>Manage Data</strong> – Keep every lead, deal, and dollar clean and visible in the CRM.</li>
+                    <li><strong>Own Systems</strong> – Make the tech stack (Salesforce, Marketo, etc.) work in sync.</li>
+                    <li><strong>Orchestrate Processes</strong> – Ensure money moves smoothly from lead to cash (and back for renewals).</li>
+                    <li><strong>Enable the Team</strong> – Give Sales, Marketing, and CS the playbooks and training that win deals.</li>
+                </ul>
+            </div>    
+        </div>
+
+      <div class="content-block">
+        <h3>The Problem: Myriads of Opinionated SaaS Tools working in Silos</h3>
+        <p>Gong logs calls, Clari forecasts pipeline, Chili Piper books meetings, Rattle nudges reps—each brilliant at one thing yet blind to the rest. Because SaaS tools are opinionated and siloed, RevOps spends its days stitching CSVs, writing brittle integrations, and troubleshooting workflows instead of steering revenue strategy.</p>
+      </div>
+
+      <div class="content-block">
+        <h3>The Vision: A Canvas of AI Agents</h3>
+        <p>Consider a system that unified the revenue stack to a single canvas of agents that could talk to first‑party data (data lying in CRMs, calls, emails) as well as access hundreds of third‑party vendors (e.g., people graphs, firmographics, job‑change signals, custom research agents, and hundreds more).</p>
+        <p>It is a platform that will allow RevOps to access and use LLM and MCP agents and talk to all systems as required and to autonomously handle processes and tasks.</p>
+      </div>
+
+      <div class="content-block">
+        <h3>What This Means for RevOps—and for Anyone Who Just Cares About Growth</h3>
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon">⚡</div>
+            <div class="benefit-content">
+              <h4>Faster Execution</h4>
+              <p>Routine revenue chores run themselves, so people focus on strategy and customer relationships.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🔄</div>
+            <div class="benefit-content">
+              <h4>Unified Data</h4>
+              <p>Data and decisions flow freely because every agent speaks the same language: your data model.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🚀</div>
+            <div class="benefit-content">
+              <h4>10x Speed</h4>
+              <p>Need a new process? Drag a few agents, set the goal, press launch. The canvas keeps pace with business changes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<footer><center><h5>© 2025 nRev. All rights reserved.</h5></center></footer>
+<script>
+  // Scroll to section function
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Set up the workflow diagram and animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.getElementById('workflow-canvas');
+    const resultsContainer = document.getElementById('results-container');
+    const nodes = document.querySelectorAll('.workflow-node');
+    const promptInput = document.getElementById('prompt-input');
+    const promptButton = document.getElementById('prompt-button');
+    
+    // Create connections between nodes
+    createConnection('node-1', 'node-2');
+    createConnection('node-2', 'node-3');
+    
+    // Hide all nodes initially
+    nodes.forEach(node => {
+      node.style.opacity = '0';
+      node.style.transform = 'translateY(10px)';
+    });
+    
+    // Hide connections initially
+    document.querySelectorAll('.connection').forEach(conn => {
+      conn.style.opacity = '0';
+    });
+    
+    // Hide results initially
+    resultsContainer.style.opacity = '0';
+    
+    // Make first card clickable
+    document.getElementById('it-ops-card').addEventListener('click', function() {
+      canvas.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        startWorkflowAnimation();
+      }, 500);
+    });
+    
+    // Handle form submission
+    const waitlistForm = document.getElementById('waitlist-form');
+    const emailInput = document.getElementById('email-input');
+    const submitBtn = document.getElementById('submit-btn');
+    const formStatus = document.getElementById('form-status');
+
+    waitlistForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const email = emailInput.value.trim();
+      if (!email) return;
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      
+      try {
+        // Submit to Upstash Redis
+        const response = await fetch('https://api.upstash.com/v2/redis/nrev-email-waitlist/set', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + 'YOUR_UPSTASH_TOKEN' // Replace with your actual token in production
+          },
+          body: JSON.stringify({
+            key: `waitlist:${Date.now()}`,
+            value: email,
+            ex: 31536000 // 1 year expiration
+          })
+        });
+
+        const data = await response.json();
+        
+        if (response.ok) {
+          // Success
+          formStatus.textContent = 'Thank you! You\'ve been added to our waitlist.';
+          formStatus.className = 'form-status success visible';
+          emailInput.value = '';
+        } else {
+          // API Error
+          throw new Error(data.message || 'Failed to join waitlist');
+        }
+      } catch (error) {
+        // Error
+        formStatus.textContent = 'Sorry, there was an error. Please try again later.';
+        formStatus.className = 'form-status error visible';
+        console.error('Waitlist submission error:', error);
+      } finally {
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Join Waitlist →';
+        
+        // Hide status message after 5 seconds
+        setTimeout(() => {
+          formStatus.className = 'form-status';
+        }, 5000);
+      }
+    });
+    
+    // Add draggable functionality to nodes
+    nodes.forEach(node => {
+      makeDraggable(node);
+    });
+    
+    // Start the workflow animation automatically after page load
+    setTimeout(() => {
+      startWorkflowAnimation();
+    }, 1000);
+    
+    // Function to start the workflow animation sequence
+    function startWorkflowAnimation() {
+      resetWorkflow();
+      
+      // Start typing animation
+      const promptText = "Create a workflow to enrich leads from Hubspot with social profiles...";
+      promptInput.value = "";
+      promptInput.classList.add('typing-animation');
+      
+      let charIndex = 0;
+      const typingInterval = setInterval(() => {
+        if (charIndex < promptText.length) {
+          promptInput.value += promptText.charAt(charIndex);
+          charIndex++;
+        } else {
+          clearInterval(typingInterval);
+          promptInput.classList.remove('typing-animation');
+          
+          // After typing completes, show the nodes sequentially
+          setTimeout(() => {
+            showNodesSequentially();
+          }, 500);
+        }
+      }, 50);
+    }
+    
+    // Function to show nodes sequentially with border animation
+    function showNodesSequentially() {
+      nodes.forEach((node, index) => {
+        setTimeout(() => {
+          // Show node
+          node.style.opacity = '1';
+          node.style.transform = 'translateY(0)';
+          
+          // Add running animation
+          node.classList.add('running');
+          
+          // Remove running animation after 3 seconds
+          setTimeout(() => {
+            node.classList.remove('running');
+            
+            // If it's the last node, show connections and then results
+            if (index === nodes.length - 1) {
+              showConnectionsSequentially();
+            }
+          }, 3000);
+        }, index * 2000); // Longer delay between nodes to allow for border animation
+      });
+    }
+    
+    // Function to show connections sequentially
+    function showConnectionsSequentially() {
+      const connectionElements = document.querySelectorAll('.connection');
+      connectionElements.forEach((conn, index) => {
+        setTimeout(() => {
+          conn.style.opacity = '1';
+          
+          // If it's the last connection, show results
+          if (index === connectionElements.length - 1) {
+            setTimeout(() => {
+              showResults();
+            }, 500);
+          }
+        }, index * 500);
+      });
+    }
+    
+    // Function to show results
+    function showResults() {
+      resultsContainer.style.opacity = '1';
+      resultsContainer.style.transform = 'translateY(0)';
+      
+      // Reset and restart the animation after a delay
+      setTimeout(() => {
+        resetWorkflow();
+        setTimeout(() => {
+          startWorkflowAnimation();
+        }, 1000);
+      }, 8000);
+    }
+    
+    // Function to reset the workflow animation
+    function resetWorkflow() {
+      // Hide all nodes
+      nodes.forEach(node => {
+        node.style.opacity = '0';
+        node.style.transform = 'translateY(10px)';
+        node.classList.remove('running');
+      });
+      
+      // Hide all connections
+      document.querySelectorAll('.connection').forEach(conn => {
+        conn.style.opacity = '0';
+      });
+      
+      // Hide results
+      resultsContainer.style.opacity = '0';
+      resultsContainer.style.transform = 'translateY(20px)';
+      
+      // Reset prompt
+      promptInput.value = "";
+    }
+  });
+
+  // Function to create a connection between nodes
+  function createConnection(fromNodeId, toNodeId) {
+    const fromNode = document.getElementById(fromNodeId);
+    const toNode = document.getElementById(toNodeId);
+    
+    if (!fromNode || !toNode) return;
+    
+    const fromRect = fromNode.getBoundingClientRect();
+    const toRect = toNode.getBoundingClientRect();
+    const canvasRect = document.getElementById('workflow-canvas').getBoundingClientRect();
+    
+    // Calculate center points
+    const fromX = fromRect.left + fromRect.width - canvasRect.left;
+    const fromY = fromRect.top + fromRect.height/2 - canvasRect.top;
+    const toX = toRect.left - canvasRect.left;
+    const toY = toRect.top + toRect.height/2 - canvasRect.top;
+    
+    // Calculate distance and angle
+    const dx = toX - fromX;
+    const dy = toY - fromY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+    
+    // Create connection line
+    const connection = document.createElement('div');
+    connection.className = 'connection';
+    connection.style.width = distance + 'px';
+    connection.style.left = fromX + 'px';
+    connection.style.top = fromY + 'px';
+    connection.style.transform = `rotate(${angle}deg)`;
+    connection.style.opacity = '0'; // Start hidden
+    
+    document.getElementById('workflow-canvas').appendChild(connection);
+    return connection;
+  }
+
+  // Function to make an element draggable
+  function makeDraggable(element) {
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    
+    element.querySelector('.node-handle').onmousedown = dragMouseDown;
+    
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // Get the mouse cursor position at startup
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // Call a function whenever the cursor moves
+      document.onmousemove = elementDrag;
+      
+      // Add active class
+      element.classList.add('dragging');
+    }
+    
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // Calculate the new cursor position
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // Set the element's new position
+      element.style.top = (element.offsetTop - pos2) + "px";
+      element.style.left = (element.offsetLeft - pos1) + "px";
+    }
+    
+    function closeDragElement() {
+      // Stop moving when mouse button is released
+      document.onmouseup = null;
+      document.onmousemove = null;
+      
+      // Remove active class
+      element.classList.remove('dragging');
+      
+      // Update connections
+      updateConnections();
+    }
+  }
+
+  // Function to update connections when nodes are moved
+  function updateConnections() {
+    // Remove existing connections
+    document.querySelectorAll('.connection').forEach(conn => {
+      conn.remove();
+    });
+    
+    // Recreate connections
+    createConnection('node-1', 'node-2');
+    createConnection('node-2', 'node-3');
+  }
+</script>
+</body>
+</html>
